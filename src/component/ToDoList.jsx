@@ -1,16 +1,18 @@
 import { useState } from "react"
 import InputFeld from "./InputFeld"
+import Counter from "./Counter"
 import ToDo from "./ToDo"
 
 const ToDoList = (props) => {
 
-    const [newToDO, setNewToDo] = useState([])
+    const [newToDo, setNewToDo] = useState([])
 
     return (
         <div>
             <h1>ToDo Liste</h1>
+            <Counter counter={newToDo.length} />
             <InputFeld settodo={setNewToDo}/>
-            {newToDO.map((item, key)=>{
+            {newToDo.map((item, key)=>{
                 return (
                     <ToDo key={key} title={item}/>
                 )
